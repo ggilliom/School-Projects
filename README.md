@@ -1,24 +1,4 @@
-# Intro-II_Java
-Java files for Intro to CS II at Tulane
+# School-Projects
+School Projects from UAHS and Tulane
 
-
-Dan Edit
-
-Hello World
-Testing
-Booyah
-Thanks Dan
-ewhqionvdsaklvojwrgqnklds
-
-I'm adding
-
-A new line
-Another new line
-
-
-gnruidsa
-
-fsnajovdns
-
-
-Update
+School Projects!
