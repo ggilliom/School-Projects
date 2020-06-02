@@ -9,3 +9,8 @@ Testing
 Booyah
 Thanks Dan
 ewhqionvdsaklvojwrgqnklds
+
+I'm adding
+
+A new line
+Another new line
