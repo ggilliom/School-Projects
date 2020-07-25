@@ -3,12 +3,15 @@
 School Projects from UAHS and Tulane
 
 Classes:
+
 	AP Compsci (Java)
 		Various learning units, each with different lab(s)
 		A few bigger projects, like Winter Scene, Casino Lab, and Encryption Project
+
 	Intro to Compsci I (Python)
 		Labs 0-10 (my solutions)
 		Screenshots of tables of useful functions
+
 	Intro to Compsci II (Java, C, C++, Haskell)
 		Divided into separate languages (Java, C, C++ Haskell)
 		Learning files used in class
@@ -25,6 +28,7 @@ Classes:
 				40 year in-depth financial account simulation
 				README contains instructions
 				Entirely original code
+				
 	TA Intro I
 		Important files for TA job
 		canvas.py
