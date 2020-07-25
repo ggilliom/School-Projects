@@ -1,0 +1,179 @@
+//Garrett Gilliom and Gavin Shafer
+
+import java.util.Scanner;
+import java.util.Arrays;
+/**
+ * A stopwatch accumlates time when it is running.  You can
+ * repeatedly start and stop the stopwatch.  You can use a
+ * stopwatch to measure the running time of code.
+ * 
+ * @author (Cay Horstman) 
+ * @version (a version number or a date)
+ */
+public class StopWatch
+{
+    private long elapsedTime;
+    private long startTime;
+    private boolean isRunning;
+    
+    public StopWatch()
+    {
+        reset();
+    }
+    
+    public void start()
+    {
+        if (isRunning)
+            return;
+        isRunning = true;
+        startTime = System.currentTimeMillis();
+        //System.out.println(startTime);
+    }
+
+    public void stop()
+    {
+        if (!isRunning)
+            return;
+        isRunning = false;
+        long endTime = System.currentTimeMillis();
+        //System.out.println(endTime);
+        elapsedTime = elapsedTime + endTime - startTime;
+    }
+    
+    public long getElapsedTime()
+    {
+        if (isRunning)
+        {
+            long endTime = System.currentTimeMillis();
+            elapsedTime = elapsedTime + endTime - startTime;
+            startTime = endTime;
+        }
+        return elapsedTime;
+    }
+    
+    public void reset()
+    {
+        elapsedTime = 0;
+        isRunning = false;
+    }
+    //Everything above is good to go.
+    
+    
+    //Let's test it
+    public static void main(String[] args)
+    {
+        StopWatch myWatch = new StopWatch();
+        System.out.println("Enter number of entries");
+        Scanner keys = new Scanner(System.in);
+        int size = keys.nextInt();
+        System.out.println("Enter number of trials");
+        int trials = keys.nextInt();
+        System.out.println();
+    
+        
+        /*
+        long count1 = 0;
+        for(int i = 0; i < trials; i++)
+        {
+        int[] arr1 = MakeArray.randomArr(size);
+        myWatch.start();
+        MergeSort.mergeSort(arr1);
+        myWatch.stop();
+        long time1 = myWatch.getElapsedTime();
+        count1+= time1;
+        }
+        System.out.println("Merge Total Time = " +count1);
+        System.out.println("Merge Average = " + (double)count1/trials);
+        System.out.println();
+        
+         
+        
+        myWatch.reset();
+        long count2 = 0;
+        for(int i = 0; i < trials; i++)
+        {
+        int[] arr2 = MakeArray.randomArr(size);
+        myWatch.start();
+        InsertionSort.insertionSort(arr2);
+        myWatch.stop();
+        long time2 = myWatch.getElapsedTime();
+        count2 += time2;
+        }
+        System.out.println("Insertion Total Time = " +count2);
+        System.out.println("Insertion Average = " + (double)count2/trials);
+        System.out.println();
+        
+        
+        
+        myWatch.reset();
+        long count0 = 0;
+        for(int i = 0; i < trials; i++)
+        {
+        int [] arr0 = MakeArray.randomArr(size);
+        myWatch.start();
+        SelectionSort.selectionSort(arr0);
+        myWatch.stop();
+        long time0 = myWatch.getElapsedTime();
+        count0 += time0;
+        }
+        System.out.println("Selection Total Time = " +count0);
+        System.out.println("Selection Average = " + (double)count0/trials);
+        System.out.println();
+        
+        
+        myWatch.reset();
+        long count5 = 0;
+        for(int i = 0; i < trials; i++)
+        {
+        int [] arr5 = MakeArray.randomArr(size);
+        myWatch.start();
+        BubbleSort.bubbleSort(arr5);
+        myWatch.stop();
+        long time5 = myWatch.getElapsedTime();
+        count5 += time5;
+        }
+        System.out.println("Bubble Total Time = " +count5);
+        System.out.println("Bubble Search Average = " +(double)count5/trials);
+        System.out.println();
+        
+        
+        
+        myWatch.reset();
+        long count3 = 0;
+        for(int i = 0; i < trials; i++)
+        {
+        int randomValLin = (int)(Math.random()*(10000)-5000);
+        int [] arr3 = MakeArray.randomArr(size);
+        myWatch.start();
+        LinearSearch.linearSearch(arr3, randomValLin);
+        myWatch.stop();
+        long time3 = myWatch.getElapsedTime();
+        count3 += time3;
+        }
+        System.out.println("Linear Total Time = " +count3);
+        System.out.println("Linear Search Average = " +(double)count3/trials);
+        System.out.println();
+        */
+        
+        
+        myWatch.reset();
+        long count4 = 0;
+        for(int i = 0; i < trials; i++)
+        {
+        int randomValBin = (int)(Math.random()*(10000)-5000);
+        int [] arr4 = MakeArray.randomArr(size);  
+        Arrays.sort(arr4);
+        myWatch.start();
+        BinarySearch.binarySearch(arr4, randomValBin);
+        myWatch.stop();
+        long time4 = myWatch.getElapsedTime();
+        count4 += time4;
+        }
+        System.out.println("Binary Total Time = " +count4);
+        System.out.println("Binary Search Average = " +(double)count4/trials);
+        System.out.println();
+        
+        
+        }
+}
+        

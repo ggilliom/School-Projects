@@ -1,0 +1,15 @@
+public class EncryptMethods
+{
+  public String encrypt(String before)
+  {
+    
+    return "";
+  }
+  
+  public String decrypt(String before)
+  {
+    
+    return "";
+  }
+  
+}

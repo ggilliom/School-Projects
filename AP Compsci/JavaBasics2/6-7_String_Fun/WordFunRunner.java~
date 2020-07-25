@@ -1,0 +1,27 @@
+//(c) A+ Computer Science
+//www.apluscompsci.com
+
+//Name - Garrett Gilliom
+//Date - 10/16/18
+//Class - APCSA Period 8
+//Lab  - 6-7 String Fun
+
+import static java.lang.System.*;
+
+public class WordFunRunner
+{
+ public static void main( String args[] )
+ {
+    WordFun test = new WordFun("Hello World");
+    System.out.println(test);
+    test.makeUpper();
+    System.out.println(test);
+    test.addHyphen();
+    System.out.println(test);
+    test.alphabetize();
+    System.out.println(test);
+
+    //add more test cases
+
+ }
+}

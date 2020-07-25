@@ -1,0 +1,10 @@
+public class Recursion
+{
+  private int spot = 0;
+  
+  public int myIndex(String big, String small)
+  {
+    
+    if(
+  }
+}

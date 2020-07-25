@@ -1,0 +1,24 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  - 
+
+public class ThreeAPSortRunner
+{
+ public static void main( String args[] )
+ {
+    ThreeAPSort.insertionSort(new int[]{9,5,3,2});
+
+    ThreeAPSort.selectionSort(new int[]{9,5,3,2});
+
+    ThreeAPSort.mergeSort(new int[]{9,5,3,2});
+
+
+    ThreeAPSort.insertionSort(new int[]{19,52,3,2,7,21});
+// add other sorts
+
+    ThreeAPSort.insertionSort(new int[]{68,66,11,2,42,31});
+// add other sorts
+ }
+}

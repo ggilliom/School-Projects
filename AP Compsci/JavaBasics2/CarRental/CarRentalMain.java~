@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class CarRentalMain
+{
+  public static void main(String[] args)
+  {
+    Scanner garrett = new Scanner(System.in);
+    String make = garrett.nextLine();
+    String model = garrett.nextLine();
+    String plate = garrett.nextLine();
+    CarRental car = new CarRental(plate);
+    System.out.println("Make = " + make);
+    System.out.println("Model = " + model);
+    car.findCode();
+    System.out.println(plate + " = " + car);
+    
+    make = garrett.nextLine();
+    model = garrett.nextLine();
+    plate = garrett.nextLine();
+    car = new CarRental(plate);
+    System.out.println("Make = " + make);
+    System.out.println("Model = " + model);
+    car.findCode();
+    System.out.println(plate + " = " + car);
+
+
+  }
+}
+
+
