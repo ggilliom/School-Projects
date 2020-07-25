@@ -2,15 +2,15 @@
 
 ### School Projects from UAHS and Tulane
 
-####AP Compsci (Java):
+**AP Compsci (Java):**
 * Various learning units, each with different lab(s)
 * A few bigger projects, like Winter Scene, Casino Lab, and Encryption Project
 
-####Intro to Compsci I (Python):
+**Intro to Compsci I (Python):**
 * Labs 0-10 (my solutions)
 * Screenshots of tables of useful functions
 
-####Intro to Compsci II (Java, C, C++, Haskell):
+**Intro to Compsci II (Java, C, C++, Haskell):**
 * Divided into separate languages (Java, C, C++ Haskell)
 * Learning files used in class
 	* Contains notes and examples about a language's functionality
@@ -27,7 +27,7 @@
 		* README contains instructions
 		* Entirely original code
 
-####TA Intro I (Python):
+**TA Intro I (Python):**
 * Important files for TA job
 * canvas.py
 	* Script provided by Tulane to transfer Zybooks assignment data to the Canvas grading syste
