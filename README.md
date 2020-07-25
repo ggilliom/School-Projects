@@ -30,4 +30,4 @@
 ####TA Intro I (Python):
 * Important files for TA job
 * canvas.py
-	* Script provided by Tulane to transfer Zybooks assignment data to the Canvas grading system
+	* Script provided by Tulane to transfer Zybooks assignment data to the Canvas grading syste
