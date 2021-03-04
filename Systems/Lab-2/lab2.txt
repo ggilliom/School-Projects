@@ -1,0 +1,27 @@
+Garrett Gilliom Lab 2
+
+Question 1: Here goes my answer to question 1...
+garrettgilliom@Garretts-MacBook-Air Lab 2 %
+
+Question 2: Here goes my answer to question 2...
+/Users/garrettgilliom
+
+Question 3: Here goes my answer to question 3...
+Applications		Music			bin
+Desktop			Pictures		eclipse
+Documents		Public			eclipse-workspace
+Downloads		PycharmProjects		opt
+Library			Untitled.ipynb		output.txt
+Movies			Untitled1.ipynb
+
+Question 4: Here goes my answer to question 4...
+/Users/garrettgilliom/Desktop/CompSci/School-Projects/Systems
+(Note: I already had a folder titled "Systems" for this course, so I figured I would just use that one. "$ mkdir Systems" would be the command to accomplish this, though).
+
+Question 5: Here goes my answer to question 5...
+I used "$ mv copy.txt .." to move my copy.txt file from inside a "Lab 2" directory within my "Systems" directory (~/.../Systems/Lab\ 2/copy.txt).
+I then used "$ mv copy.txt Lab\ 2" to move the copy.txt file in "Systems" back into my "Lab 2" file.
+
+Question 6: Here goes my answer to question 6...
+*: This operator is used to both declare a pointer and to get the value at a memory address through a pointer
+&: This operator is used to access the memory address of a variable

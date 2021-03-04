@@ -1,0 +1,39 @@
+#!/bin/bash
+
+echo "Hello there, terminal"
+echo "Hi there to file" >> handin.txt # this part is a comment
+
+x="my favorite string"
+y=10
+let "y += 1"
+
+echo ${y}
+
+echo ${x}
+echo ${y}0
+
+echo "The first parameter was ${1}"
+
+if [[ 3 != 2 ]]; then
+	echo "not equal"
+else
+	echo "equal"
+fi
+
+for file in *; do
+  echo ${file}
+done
+
+for file in `ls`; do
+  echo ${file}
+done
+
+for file in `cd ../Lab\ 3 && ls *.c`; do
+  echo ${file}
+done
+
+for file in `cd ${2} && ls`; do
+	echo ${file}
+done
+
+exit

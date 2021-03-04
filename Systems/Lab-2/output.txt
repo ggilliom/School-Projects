@@ -1,0 +1,7 @@
+The total idle time over the days was 1400 minutes
+The performance rate over the days was 24.31%
+The average daily idle time over the days was 350.00 minutes
+Day(s) with lowest idle time:
+Day 4
+Day(s) with highest idle time:
+Day 3

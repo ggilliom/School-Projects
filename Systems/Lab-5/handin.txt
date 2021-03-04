@@ -1,0 +1,145 @@
+1a)
+
+There can be 2^20 virtual pages, or 1,048,576 virtual pages, in this virtual
+address space. This corresponds to how many different pages the 20 leftmost
+bits in a virtual memory address.
+
+
+1b)
+
+Each virtual page is 
+
+2^28 bytes == 268,435,456 bytes ~~ 268.435456 MB
+
+large
+
+
+2)
+
+Frame Size (bytes) == Page Size (bytes)
+
+PM size (bytes) / Frame Size == # of Frames
+
+2^34 (bytes) / 2^28 (bytes/frame) == 2^6 frames == 64 frames
+
+
+3)
+
+The provided hexadecimal number converted into binary is:
+
+00000000000000000010 0000000100101101011010000111
+---------VPN-------- -----------offset-----------
+
+This number can be split in two parts: the left 20 bits, corresponding to the virtual page number
+(VPN), and the right 28 bits, corresponding to the offset (as seen shown above). The OS reads the
+VPN, which is the 2nd virtual page in this case, and looks for it in the page table (PT). The PT 
+correlates this VPN to some protected physical frame (PF) location that is unknown. The offset
+is then used to access the specific place in the PF the PT pointed to, which is, in this case,
+the 1234567th byte in the PF. In hexadecimal, this offset location is 0x12D687.
+
+
+4)
+
+0xB9A9 => 0x49A9
+0x0532 => 0x7532
+0x6421 => 0x8421
+0x1B80 => 0xBB80
+0xF300 => 0x2300
+
+
+5)
+
+One example of a virtual address in hexadecimal that results in a segmentation fault is 0xD300.
+This VA corresponds to the 13th slot in the PT, does not have a PFN to point to and has a valid 
+bit value of 0. Any VA with a starting hex value of D will result in this – the following three
+digits only correspond to the offset.
+
+
+6)
+
+Whether or not the page table changes depends on how the address space grows. If the address
+space grows by increasing the amount of bits in its VPN portion, then the page table would grow
+to accomodate the added possible page locations while keeping the page table size, or the offset
+portion of the address space, constant. On the other hand, if the offset portion of the address
+space was increased and the VPN portion kept constant, then the size of the individual pages
+would grow, as more bits are being allocated to specify a location within each page, and the
+amount of actual page tables would stay the same, thereby not inflicting growth of the page
+table itself.
+
+
+7)
+
+If the size of each individual page grows, then the size of the page table must decrease to keep
+in line with the predetermined size of the total address space. As more bits are allocated to
+the offset of the address space, then bits representing the VPN must be sacrificed at the same
+rate. Fewer bits representing the VPN means fewer total pages exist; therefore, the page table
+itself would be smaller, as there are would be no need to hold slots that are not accessible by
+some arbitrary virtual address.
+
+
+8)
+
+The main downside to using large pages is that of overallocating unecessary memory. If a process
+requires an extra, say, 4 bytes for an int variable and has already allocated memory to the
+entirety of the offset space for that page, then a whole extra page must be allocated for it.
+While this does occur for pages of smaller sizes too, it's mainly problematic for large pages, as
+allocating an extra page inherently takes up more memory than a smaller one. This can lead to a
+lot of wasted space, as large portions of memory may be allocated to only hold a few bytes of
+memory for a simple variable.
+
+
+9)
+
+1KB page size => 1024 bytes => 2^10 bytes => 10 bits
+
+0x00003a39 => 00000000000000000011101000111001
+
+			  0000000000000000001110 1000111001
+			  ----------VPN--------- -offset---
+
+0x00001986 => 00000000000000000001100110000110
+
+			  0000000000000000000110 0110000110
+			  ----------VPN--------- -offset---
+
+
+10)
+
+As more and more pages are allocated within the address space, then more viable memory locations
+to store information/data would exist and fewer segmentation faults would occur. With more pages
+having been created for memory to be stored in them, the odds of attempting to access a page or
+spot in memory that is unavailable decreases. However, after those pages are created, memory is
+left with less free space/free pages to allocate and for the OS to work with.
+
+
+11)
+
+When I changed the arguments around so that the address space size (using the -a flag) was larger
+than the physical memory size (using the -P flag), the program output an error message stating
+that "physical memory size must be GREATER than address space size (for this simulation)." 
+It also did not work when I made the page size greater than the address space. Here are a few
+other argument examples I tried that resulted in errors output by the program:
+- Any negative page, address space, or physical memory size
+- A physical memory or address space size that was NOT a multiple of the page size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

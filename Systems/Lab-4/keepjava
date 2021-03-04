@@ -1,0 +1,11 @@
+#!/bin/bash
+
+path=${1}
+
+cd ${path}
+
+for file in `find . -type f ! -name '*.java'`; do
+	rm ${file}
+done
+
+exit

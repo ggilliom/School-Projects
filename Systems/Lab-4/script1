@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Command ran in terminal
+echo "./script1 ${1} ${2} ${3} ${4}" >> handin.txt
+
+# Print statements
+echo "This line prints to the terminal"
+echo "This line prints to a file" >> handin.txt
+
+# COMMAND LINE ARGS:
+# ${1} – number
+# ${2} – number
+# ${3} – file name
+# ${4} – folder name
+
+# Assign command line arguments to variable names
+first=${1}
+second=${2}
+third=${3}
+fourth=${4}
+
+echo ${second} >> handin.txt # print value of second variable
+
+# Check which argument is greater
+if [[ ${first} -gt ${second} ]]; then
+	echo "The first argument is bigger than the second." >> handin.txt
+elif [[ ${first} -lt ${second} ]]; then
+	echo "The second argument is bigger than the first." >> handin.txt
+else
+	echo "The first and second arguments are equal." >> handin.txt
+fi
+
+# Check if file exists
+if [[ -f ${third} ]]; then
+    echo "${third} exists; it is a file." >> handin.txt
+else
+    echo "${third} does not exist." >> handin.txt
+fi
+
+# Check if folder/directory exists
+if [[ -d ${fourth} ]]; then
+    echo "${fourth} exists; it is a folder." >> handin.txt
+    for file in `cd ${fourth} && ls *.c`; do
+		echo ${file} >> handin.txt
+	done
+else
+    echo "${fourth} does not exist; no output of files is possible." >> handin.txt
+fi
+
+# Padding between commands
+echo "" >> handin.txt
+
+exit

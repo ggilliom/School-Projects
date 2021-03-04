@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# Worked with Jonathan Licht
+
+path=${1}
+
+cd ${path}
+
+period=0
+under1=0
+under2=0
+fileName=""
+end=1
+len=0
+underCheck=0
+periodCheck=0
+exten=""
+user=""
+
+echo "ls"
+ls
+echo ""
+
+for file in `ls`; do
+	let "len = ${#file} - 1" #
+	fileName=${file}
+	echo ${fileName}
+	for ((spot=0;spot<${#file};spot++)); do
+
+		if [[ ${fileName:${spot}:1} == '.' && ${periodCheck} == 0 ]]; then
+			period=${spot}
+			let "periodCheck += 1"
+			echo "in period if"
+		fi
+
+		if [[ ${fileName:${spot}:1} == '_' && ${underCheck} == 1 ]]; then
+			under2=${spot}
+			let "underCheck += 1"
+		fi
+
+		if [[ ${fileName:${spot}:1} == '_' && ${underCheck} == 0 ]]; then
+			under1=${spot}
+			let "underCheck += 1"
+		fi
+
+		let "end += 1"
+	done
+
+	echo "period ${period}"
+	echo "under1 ${under1}"
+	echo "under2 ${under2}"
+
+	exten=${fileName:${period}:${under1}-${period}}
+
+	user=${fileName:${under1}+1:${under2}-${under1}-1}
+
+	echo "exten ${exten}"
+	echo "user ${user}"
+
+	fileName="${user}${exten}"
+
+	echo "end fileName ${fileName}"
+
+	mv ${file} ${fileName}
+
+	let "end = 1"
+	let "underCheck = 0"
+	let "periodCheck = 0"
+	echo ""
+done
+
+exit
