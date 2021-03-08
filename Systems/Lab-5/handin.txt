@@ -1,3 +1,5 @@
+Garrett Gilliom
+
 1a)
 
 There can be 2^20 virtual pages, or 1,048,576 virtual pages, in this virtual
